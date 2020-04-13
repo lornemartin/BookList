@@ -29,7 +29,7 @@ namespace BookListRazor.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var bookFromDb = await _db.Book.FirstOrDefaultAsync(u => u.Id == id);
-            if(bookFromDb == null)
+            if (bookFromDb == null)
             {
                 return Json(new { success = false, message = "Error while Deleting" });
             }
